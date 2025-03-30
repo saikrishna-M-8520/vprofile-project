@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo -s
 # Install Java 11 (Amazon Corretto)
 amazon-linux-extras enable corretto11
 yum install java-11-amazon-corretto -y   
@@ -10,7 +11,7 @@ mkdir -p /tmp/nexus/
 
 # Download and extract Nexus
 cd /tmp/nexus
-NEXUSURL="https://download.sonatype.com/nexus/3/latest-unix.tar.gz"
+NEXUSURL="https://download.sonatype.com/nexus/3/nexus-unix-x86-64-3.78.2-04.tar.gz"
 wget $NEXUSURL -O nexus.tar.gz
 EXTOUT=`tar xzvf nexus.tar.gz`
 NEXUSDIR=`echo $EXTOUT | cut -d '/' -f1`
